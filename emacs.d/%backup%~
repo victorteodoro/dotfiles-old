@@ -1,0 +1,37 @@
+angular.module('starter.controllers', [])
+
+    .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+
+	var options = {
+	    location: 'yes',
+	    clearcache: 'yes',
+	    toolbar: 'no'
+	};
+
+	$scope.goToCheckoutWebPage = function() {
+	   var ref = cordova.InAppBrowser.open('http://spoonrocket-checkout.herokuapp.com/', '_blank', "location=yes")
+	    
+		.then(function(event) {
+		    // success
+		})
+	    
+		.catch(function(event) {
+		    // error
+		});
+	}
+})
+
+.controller('PlaylistsCtrl', function($scope) {
+  $scope.playlists = [
+    { title: 'Reggae', id: 1 },
+    { title: 'Chill', id: 2 },
+    { title: 'Dubstep', id: 3 },
+    { title: 'Indie', id: 4 },
+    { title: 'Rap', id: 5 },
+    { title: 'Cowbell', id: 6 }
+  ];
+})
+
+.controller('PlaylistCtrl', function($scope, $stateParams) {
+    $scope.victor = 'chico';
+});
