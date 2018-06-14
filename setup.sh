@@ -4,5 +4,5 @@
 # (You'll  need to move your dotfiles out the way first).
 
 for file in $(ls); do
-    ln -s $(pwd)/$file ~/.$file;
+    ln -fs $(pwd)/$file ~/.$file;
 done
