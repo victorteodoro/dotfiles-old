@@ -1,0 +1,7 @@
+I'm cyrrently using theses fonts in Ubuntu:
+
+- App font: Futura Book 12
+- Doc font: Futura Book 11
+- Desktop font: Futura Book 13
+- Window title font: Gill Sans Regular 12
+- Monospace font: Inconsolata 13
