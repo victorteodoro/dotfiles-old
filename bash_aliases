@@ -16,9 +16,10 @@ alias meminfo='cat /proc/meminfo'
  
 
 # Ferramentas auxiliares
-alias wifi-search='sudo iwlist wlp6s0 scan'
+alias wifi-search='sudo iwlist wlp2s0 scan'
 alias wifi-restart='sudo systemctl restart NetworkManager'
 alias wget-site='wget --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows'
+alias ram-info='sudo dmidecode --type 17'
 
 # Ferramentas de desenvolvimento
 alias python="python3"

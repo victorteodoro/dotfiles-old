@@ -126,4 +126,4 @@ if [ -f ~/.bash_profile ]; then
 fi
 
 # added by Anaconda3 installer
-export PATH="/home/victor/.anaconda/bin:$PATH"
+export PATH="/home/victor/anaconda3/bin:$PATH"
