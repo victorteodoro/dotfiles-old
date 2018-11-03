@@ -3,15 +3,15 @@
 ;; -------------------------------------- ;;
 
 (require 'package)
-
-;; Comment/uncomment these two lines to enable/disable
-;; MELPA and MELPA Stable as desired
-(add-to-list 'package-archives (cons "melpa" "http://melpa.milkbox.net/packages/"))
-;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
-;; For important compatibility libraries like cl-lib
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/"))))
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
 ;; Use icicles for autocompletion on the minibuffer
@@ -47,6 +47,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; ----------------------------------------------- ;;
+;;                 Tern config                     ;;
+;; _______________________________________________ ;;
+(add-to-list 'load-path "~/dotfiles/tern/emacs")
+(autoload 'tern-mode "tern.el" nil t)
+
 
 ;; ----------------------------------------------- ;;
 ;;             Set cutom keybindings               ;;
@@ -137,9 +144,9 @@
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
+  (setq web-mode-block-padding 2)
   )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
@@ -148,6 +155,13 @@
 
 ;; Enable Rainbow mode on JS and JSX.
 (add-hook 'rjsx-mode-hook  'rainbow-mode)
+
+;; Enable tern-mode for js files
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
 
 ;; ---------------------------------------------- ;;
 ;;    Set indent level for different file types   ;;
@@ -233,7 +247,7 @@
   '(define-key web-mode-map (kbd "C-c b") 'web-beautify-html))
 
 (eval-after-load 'css-mode
-    '(define-key css-mode-map (kbd "C-c b") 'web-beautify-css))
+  '(define-key css-mode-map (kbd "C-c b") 'web-beautify-css))
 
 ;; ----------------------------------------------------------- ;;
 ;;                         CEDET config                        ;;

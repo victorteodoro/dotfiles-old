@@ -1,0 +1,9 @@
+{
+    "breadcrumbs.enabled": true,
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.fontFamily": "Inconsolata for Powerline",
+    "terminal.integrated.fontSize": 14,
+    "editor.fontFamily": "'Inconsolata', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 16,
+    "terminal.integrated.rendererType": "dom"
+}
