@@ -5,5 +5,7 @@
     "terminal.integrated.fontSize": 14,
     "editor.fontFamily": "'Inconsolata', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 16,
-    "terminal.integrated.rendererType": "dom"
+    "terminal.integrated.rendererType": "dom",
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "material-icon-theme"
 }

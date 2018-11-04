@@ -189,5 +189,71 @@
     {
         "key": "ctrl+b",
         "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+q ctrl+0",
+        "command": "editor.foldAll",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+0",
+        "command": "-editor.foldAll",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+q ctrl+j",
+        "command": "editor.unfoldAll",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+j",
+        "command": "-editor.unfoldAll",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+q ctrl+i",
+        "command": "editor.action.formatSelection",
+        "when": "editorHasSelection && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "-editor.action.formatSelection",
+        "when": "editorHasSelection && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+q ctrl+f",
+        "command": "workbench.action.selectIconTheme"
+    },
+    {
+        "key": "ctrl+x ctrl+right",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "ctrl+x ctrl+left",
+        "command": "workbench.action.splitEditorLeft"
+    },
+    {
+        "key": "ctrl+x ctrl+down",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+x ctrl+up",
+        "command": "workbench.action.splitEditorUp"
+    },
+    {
+        "key": "ctrl+x ctrl+u",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+x n",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+x f",
+        "command": "explorer.newFolder"
     }
 ]
