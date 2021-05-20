@@ -1,1 +1,0 @@
-(define-package "jsonnet-mode" "20171005.24" "Major mode for editing jsonnet files" '((emacs "24")) :commit "efe768fdcff25d746674fbbf229b9e1a7efea4f1" :url "https://github.com/mgyucht/jsonnet-mode" :keywords '("languages"))
