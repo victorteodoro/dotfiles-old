@@ -1,3 +1,15 @@
 [user]
 	name = Victor Teodoro
 	email = victorjst@hotmail.com
+	signingkey = 43E869FEAA369A44
+[filter "lfs"]
+	smudge = git-lfs smudge --skip %f
+	process = git-lfs filter-process --skip
+	clean = git-lfs clean -- %f
+	required = True
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[core]
+	editor = vi
+[commit]
+	gpgsign = true

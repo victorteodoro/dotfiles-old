@@ -6,6 +6,8 @@ alias upgrade="sudo apt-get upgrade"
 alias dist-upgrade="sudo apt-get dist-upgrade"
 alias purge="sudo apt-get purge"
 alias autoremove="sudo apt-get autoremove"
+alias autoclean="sudo apt-get autoclean"
+alias refresh-ubuntu="update && upgrade -y && autoremove && autoclean"
 alias add-repo="sudo add-apt-repository"
 alias search="apt-cache search"
 
