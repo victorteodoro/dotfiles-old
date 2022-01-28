@@ -1,0 +1,19 @@
+[custom0]
+binding='<Alt>t'
+command='spotifycli --playpause'
+name='[Spotify] Play song'
+
+[custom1]
+binding='<Shift><Alt>t'
+command='spotifycli --pause'
+name='[Spotify] Pause song'
+
+[custom2]
+binding='<Alt>n'
+command='spotifycli --next'
+name='[Spotify] Next song'
+
+[custom3]
+binding='<Alt>p'
+command='spotifycli --prev'
+name="[Spotify] Previous song'"
